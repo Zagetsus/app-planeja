@@ -12,5 +12,22 @@
 </ion-header>
 
 <ion-content padding>
+  <h6>Bem vindo ao app de Planejamento Financeiro.</h6>
+  <div *ngIf="plano.length > 0">
+    <h2>Seus planos</h2>
+    <div *ngFor="let listar of plano">
+      <ion-card>
+          <ion-card-content>
+              <h2>{{listar.nome}}</h2>
+              <p> Faturamento: {{listar.faturamento}} </p>
+              <p> Custo:{{listar.custo}} </p>
+          </ion-card-content>
+        </ion-card>
+    </div>
+  </div>
 
+  <div *ngIf="plano.length === 0">
+    <p>Nenhum Planejamento cadastrado</p>
+    <ion-button [routerLink]='["/novo-planejamento"]'>Cadastrar plano</ion-button>
+  </div>
 </ion-content>

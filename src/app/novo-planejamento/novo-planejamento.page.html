@@ -8,5 +8,23 @@
 </ion-header>
 
 <ion-content padding>
-
+  <form #form='ngForm' (ngSubmit)='salvar(form)'>
+    <ion-item>
+      <ion-label color='dark' position='floating'>Nome do Planejamento:</ion-label>
+      <ion-input name='nome' ngModel></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color='dark' position='floating'>Faturamento Mensal:</ion-label>
+      <ion-input name='faturamento' ngModel></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color='dark' position='floating'>Custo Fixo Mensal:</ion-label>
+      <ion-input name='custo' ngModel></ion-input>
+    </ion-item>
+  <br/>
+      <ion-button type='submit' color='dark' expand="block">
+        Salvar Plano 
+          <ion-icon name='checkmark-circle'></ion-icon>
+      </ion-button>
+  </form>
 </ion-content>
