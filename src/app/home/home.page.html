@@ -19,15 +19,16 @@
       <ion-card>
           <ion-card-content>
               <h2>{{listar.nome}}</h2>
-              <p> Faturamento: {{listar.faturamento}} </p>
-              <p> Custo:{{listar.custo}} </p>
+              <p> Faturamento: R$ {{listar.faturamento}} </p>
+              <p> Custo: R$ {{listar.custo}} </p>
           </ion-card-content>
         </ion-card>
     </div>
   </div>
 
   <div *ngIf="plano.length === 0">
+      <br/><br/>
     <p>Nenhum Planejamento cadastrado</p>
-    <ion-button [routerLink]='["/novo-planejamento"]'>Cadastrar plano</ion-button>
+    <ion-button color="danger" expand="block" [routerLink]='["/novo-planejamento"]'>Cadastrar plano</ion-button>
   </div>
 </ion-content>
